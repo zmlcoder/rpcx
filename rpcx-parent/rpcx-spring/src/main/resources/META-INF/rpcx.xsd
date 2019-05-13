@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns="http://www.zmlcoder.com/schema/rpcx"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.zmlcoder.com/schema/rpcx"
+	elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+	<xsd:import namespace="http://www.springframework.org/schema/beans"
+		schemaLocation="http://www.springframework.org/schema/beans/spring-beans.xsd" />
+
+
+	<xsd:element name="application" type="Application"></xsd:element>
+
+	<xsd:complexType name="Application">
+		<xsd:attribute name="id" type="xsd:string"></xsd:attribute>
+	</xsd:complexType>
+	
+	<xsd:element name="protocol" type="Protocol"></xsd:element>
+
+	<xsd:complexType name="Protocol">
+		<xsd:attribute name="id" type="xsd:string"></xsd:attribute>
+		<xsd:attribute name="host" type="xsd:string"></xsd:attribute>
+		<xsd:attribute name="port" type="xsd:string"></xsd:attribute>
+	</xsd:complexType>
+	
+	<xsd:element name="reference" type="Reference"></xsd:element>
+
+	<xsd:complexType name="Reference">
+		<xsd:attribute name="id" type="xsd:string"></xsd:attribute>
+		<xsd:attribute name="interface" type="xsd:string"></xsd:attribute>
+		<xsd:attribute name="client" type="xsd:string"></xsd:attribute>
+	</xsd:complexType>
+
+	<xsd:element name="service" type="Service"></xsd:element>
+
+	<xsd:complexType name="Service">
+		<xsd:attribute name="id" type="xsd:string"></xsd:attribute>
+		<xsd:attribute name="interface" type="xsd:string"></xsd:attribute>
+		<xsd:attribute name="ref" type="xsd:string"></xsd:attribute>
+	</xsd:complexType>
+
+	<xsd:element name="server" type="Server"></xsd:element>
+
+	<xsd:complexType name="Server">
+		<xsd:attribute name="id" type="xsd:string"></xsd:attribute>
+		<xsd:attribute name="host" type="xsd:string"></xsd:attribute>
+		<xsd:attribute name="port" type="xsd:string"></xsd:attribute>
+	</xsd:complexType>
+
+	<xsd:element name="client" type="Client"></xsd:element>
+
+	<xsd:complexType name="Client">
+		<xsd:attribute name="id" type="xsd:string"></xsd:attribute>
+		<xsd:attribute name="host" type="xsd:string"></xsd:attribute>
+		<xsd:attribute name="port" type="xsd:string"></xsd:attribute>
+	</xsd:complexType>
+
+
+	<xsd:element name="registry" type="Registry"></xsd:element>
+
+	<xsd:complexType name="Registry">
+		<xsd:attribute name="id" type="xsd:string"></xsd:attribute>
+		<xsd:attribute name="host" type="xsd:string"></xsd:attribute>
+		<xsd:attribute name="port" type="xsd:string"></xsd:attribute>
+		<xsd:attribute name="protocol" type="xsd:string"></xsd:attribute>
+	</xsd:complexType>
+</xsd:schema>
